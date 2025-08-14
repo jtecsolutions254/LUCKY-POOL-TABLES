@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucky Pool Tables & Accessories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style id="app-style">
+        :root {
+            --primary-red: #e63946;
+            --primary-yellow: #ffbe0b;
+            --primary-green: #2a9d8f;
+            --dark-bg: #212529;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: var(--light-bg);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+            padding: 10px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c5303b;
+            border-color: #c5303b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .text-green {
+            color: var(--primary-green);
+        }
+        
+        .text-red {
+            color: var(--primary-red);
+        }
+        
+        .text-yellow {
+            color: var(--primary-yellow);
+        }
+        
+        /* Header & Navigation */
+        .navbar {
+            transition: all 0.4s ease;
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+        }
+        
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 8px 0;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            color: #212529;
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-red);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.pixabay.com/photo/2017/11/24/10/43/billiard-2974955_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+        
+        .hero-cta .phone-link {
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-cta .phone-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero-content .emoji {
+            font-size: 3.5rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        /* About Section */
+        #about {
+            padding: 120px 0;
+            background-color: white;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+            bottom: -15px;
+            left: 0;
+        }
+        
+        /* Products Section */
+        #products {
+            padding: 120px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-details {
+            padding: 25px;
+        }
+        
+        .product-details h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .finishes span {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .finish-black {
+            background-color: #000;
+        }
+        
+        .finish-brown {
+            background-color: #8B4513;
+        }
+        
+        .finish-blue {
+            background-color: #1e3a8a;
+        }
+        
+        .finish-red {
+            background-color: #991b1b;
+        }
+        
+        .product-accessories {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        
+        .product-accessories li {
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        /* Why Choose Us */
+        #why-choose {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .feature-item {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            flex: 0 0 60px;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-right: 20px;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        #testimonials {
+            padding: 120px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-name h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .stars {
+            color: var(--primary-yellow);
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .quote-icon {
+            color: #e9ecef;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery */
+        #gallery {
+            padding: 120px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .gallery-container {
+            position: relative;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 120px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://cdn.pixabay.com/photo/2018/06/30/09/29/pool-ball-3507337_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            flex: 0 0 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-right: 20px;
+        }
+        
+        .form-control {
+            height: 54px;
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            background-color: rgba(255,255,255,0.2);
+            border-color: var(--primary-green);
+            box-shadow: none;
+            color: white;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            padding: 80px 0 30px;
+            color: white;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+        }
+        
+        .footer-links h5 {
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            height: 50px;
+            width: 50px;
+            background-color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Sticky WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 16px;
+            z-index: 100;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #218577;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                margin-top: 15px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 10px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            #hero {
+                height: auto;
+                padding: 150px 0 100px;
+            }
+            
+            .about-img {
+                margin-bottom: 40px;
+            }
+            
+            .swiper-slide img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                height: 40px;
+                width: 40px;
+            }
+            
+            .navbar-brand img {
+                height: 45px;
+            }
+        }
+        
+        /* Animation */
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .animate.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            display: block;
+            max-width: 100%;
+            max-height: 90vh;
+            border: 5px solid white;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-prev, .lightbox-next {
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="javascript:void(0)" style="display: flex; align-items: center; gap: 8px;">
+    <img src="photos/ChatGPT Image Aug 14, 2025, 12_42_02 PM.png" 
+         alt="Lucky Pool Tables & Accessories Logo" 
+         style="height: 50px;">
+    <span style="font-size: 25px; font-weight: bold; color: #000;">
+        Lucky Pool Tables & Accessories
+    </span>
+</a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-choose">Why Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 hero-content animate">
+                    <h1><span class="emoji">🎱</span> Upgrade Your Space with a Premium Pool Table!</h1>
+                    <p>Elevate your entertainment area with our high-quality pool tables designed for home, club, or business use.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-lg">Order Now</a>
+                        <div class="mt-3">
+                            <a href="tel:+254792493299" class="phone-link">
+                                <i class="fas fa-phone-alt me-2"></i> Call/SMS/WhatsApp: 0792 493 299
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate">
+                    <div class="about-img">
+                        <img src="photos/premiumpool.jpg" alt="Premium Pool Table">
+                    </div>
+                </div>
+                <div class="col-lg-6 animate">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="mt-4">Welcome to <strong>LUCKY POOL TABLES & ACCESSORIES</strong>, Kenya's premier provider of high-quality pool tables and accessories. With years of experience in the industry, we've built our reputation on delivering exceptional products that combine elegance, durability, and professional-grade playability.</p>
+                    <p>Our tables are crafted using premium materials that ensure long-lasting performance while adding a touch of sophistication to any space. Whether you're looking to enhance your home entertainment area, upgrade your club's gaming section, or create a recreational space for your business, our pool tables are designed to meet and exceed your expectations.</p>
+                    <p>At Lucky Pool Tables, we believe in providing not just a product, but a complete experience - from selection to installation and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="text-center animate">
+                <h2 class="section-title mx-auto">Our Premium Pool Tables</h2>
+                <p class="col-lg-8 mx-auto mt-4">Explore our collection of meticulously crafted pool tables, each designed to deliver a professional playing experience while enhancing your space.</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-6 mb-4 animate">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="photos/classicpro.jpg" alt="Classic Pro Table">
+                        </div>
+                        <div class="product-details">
+                            <h3>Classic Pro</h3>
+                            <p>Our most popular model combines traditional design with modern craftsmanship.</p>
+                            <div class="finishes mb-3">
+                                <p><strong>Available Finishes:</strong></p>
+                                <span class="finish-black" title="Matte Black"></span>
+                                <span class="finish-brown" title="Mahogany"></span>
+                                <span class="finish-blue" title="Navy Blue"></span>
+                            </div>
+                            <ul class="product-accessories">
+                                <li>2 Professional Cues</li>
+                                <li>Full Set of Balls</li>
+                                <li>Triangle Rack</li>
+                                <li>Chalk Set</li>
+                                <li>Table Brush</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 animate">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="photos/luxury elite.jpg" alt="Luxury Elite Table">
+                        </div>
+                        <div class="product-details">
+                            <h3>Luxury Elite</h3>
+                            <p>Our premium table featuring exquisite woodwork and tournament-grade cloth.</p>
+                            <div class="finishes mb-3">
+                                <p><strong>Available Finishes:</strong></p>
+                                <span class="finish-black" title="Matte Black"></span>
+                                <span class="finish-brown" title="Mahogany"></span>
+                                <span class="finish-red" title="Cherry Red"></span>
+                            </div>
+                            <ul class="product-accessories">
+                                <li>4 Professional Cues</li>
+                                <li>Premium Ball Set</li>
+                                <li>Triangle & Diamond Racks</li>
+                                <li>Premium Chalk Set</li>
+                                <li>Table Brush & Cover</li>
+                                <li>Cue Stand</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 animate">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="photos/modern sleek.jpg" alt="Modern Sleek Table">
+                        </div>
+                        <div class="product-details">
+                            <h3>Modern Sleek</h3>
+                            <p>Contemporary design with sleek lines perfect for modern spaces.</p>
+                            <div class="finishes mb-3">
+                                <p><strong>Available Finishes:</strong></p>
+                                <span class="finish-black" title="Matte Black"></span>
+                                <span class="finish-blue" title="Navy Blue"></span>
+                                <span class="finish-red" title="Cherry Red"></span>
+                            </div>
+                            <ul class="product-accessories">
+                                <li>3 Professional Cues</li>
+                                <li>Standard Ball Set</li>
+                                <li>Triangle Rack</li>
+                                <li>Chalk Set</li>
+                                <li>Table Brush</li>
+                                <li>Wall Mount Rack</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 animate">
+                <a href="#contact" class="btn btn-primary">Request Full Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose">
+        <div class="container">
+            <div class="text-center animate">
+                <h2 class="section-title mx-auto">Why Choose Us</h2>
+                <p class="col-lg-8 mx-auto mt-4">When you choose Lucky Pool Tables, you're investing in quality, durability, and exceptional service.</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Sleek, Stylish Designs</h4>
+                            <p>Our tables are designed to be the centerpiece of your entertainment space, combining aesthetics with functionality.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Durable, High-Quality Finishes</h4>
+                            <p>We use only the finest materials to ensure your table remains beautiful and functional for years to come.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Smooth, Professional Play Surface</h4>
+                            <p>Experience tournament-level play with our precision-leveled tables and premium cloth surfaces.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Delivery at a Price</h4>
+                            <p>We offer competitive delivery and installation services throughout Kenya to ensure your table arrives in perfect condition.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Full Range of Accessories</h4>
+                            <p>From cues to balls, racks to maintenance supplies, we provide everything you need for the complete billiards experience.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Expert Installation & Service</h4>
+                            <p>Our skilled technicians ensure your table is perfectly installed and leveled for optimal gameplay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="text-center animate">
+                <h2 class="section-title mx-auto">Gallery</h2>
+                <p class="col-lg-8 mx-auto mt-4">See our premium pool tables in action in various settings from homes to clubs and businesses.</p>
+            </div>
+            
+            <div class="gallery-container mt-5 animate">
+                <div class="swiper gallery-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="photos/IMG-20250810-WA0005.jpg" alt="Pool table in home setting" class="gallery-img">
+</div>
+                        <div class="swiper-slide">
+                            <img src="IMG-20250810-WA0007.jpg" alt="Pool table in club setting" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="photos/IMG-20250810-WA0009.jpg" alt="Detail of pool table surface" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="photos/IMG-20250810-WA0008.jpg" alt="Business lounge with pool table" class="gallery-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="photos/IMG-20250810-WA0010.jpg" alt="Close-up of pool accessories" class="gallery-img">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="text-center animate">
+                <h2 class="section-title mx-auto">Client Testimonials</h2>
+                <p class="col-lg-8 mx-auto mt-4">Don't just take our word for it - hear what our clients have to say about their Lucky Pool Tables experience.</p>
+            </div>
+            
+            <div class="swiper testimonial-swiper mt-5">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="client-info">
+                                <div class="client-img">
+                                    <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_1280.jpg" alt="John D.">
+                                </div>
+                                <div class="client-name">
+                                    <h5>John D.</h5>
+                                    <p>Homeowner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"The Classic Pro table I purchased has transformed my basement into the ultimate entertainment space. The quality is outstanding and the installation team was professional and efficient. My friends and family can't get enough of it!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="client-info">
+                                <div class="client-img">
+                                    <img src="https://cdn.pixabay.com/photo/2017/08/06/15/13/woman-2593366_1280.jpg" alt="Sarah M.">
+                                </div>
+                                <div class="client-name">
+                                    <h5>Sarah M.</h5>
+                                    <p>Club Owner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"We ordered three Luxury Elite tables for our sports bar, and they've been a huge hit with our customers. The durability is impressive - even with heavy use, they still look and play like new. Great investment for our business!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="client-info">
+                                <div class="client-img">
+                                    <img src="https://cdn.pixabay.com/photo/2017/11/02/14/26/model-2911329_1280.jpg" alt="Michael T.">
+                                </div>
+                                <div class="client-name">
+                                    <h5>Michael T.</h5>
+                                    <p>Office Manager</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"Adding a Modern Sleek pool table to our office break room has improved team morale significantly. The table looks fantastic in our contemporary office space, and the customer service from Lucky Pool Tables was top-notch from start to finish."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center animate">
+                    <h2 class="section-title mx-auto text-white">Get In Touch</h2>
+                    <p class="mt-4">Ready to upgrade your space with a premium pool table? Contact us today to discuss your needs or place an order.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-5 animate">
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p><a href="tel:+254792493299" class="text-green">0792 493 299</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p><a href="https://wa.me/254792493299" target="_blank" class="text-green">0792 493 299</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="far fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Business Hours</h5>
+                                <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7 animate">
+    <form id="contactForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <select class="form-control" id="model" required>
+                        <option value="">Select Pool Table Model</option>
+                        <option value="Classic Pro">Classic Pro</option>
+                        <option value="Luxury Elite">Luxury Elite</option>
+                        <option value="Modern Sleek">Modern Sleek</option>
+                        <option value="Other">Other / Not Sure Yet</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mb-4">
+            <textarea class="form-control" id="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+        </div>
+    </form>
+</div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="photos/ChatGPT Image Aug 14, 2025, 12_42_02 PM.png" alt="Lucky Pool Tables & Accessories Logo">
+                    </div>
+                    <p>Providing premium pool tables and accessories for homes, clubs, and businesses across Kenya since 2015.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61579038306387"><i class="fab fa-facebook-f"></i></a>
+<a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+<a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+<a href="https://wa.me/254792493299" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:luckypooltablesandaccessories@gmail.com"><i class="fas fa-envelope"></i></a>
+ </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#why-choose">Why Choose Us</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-phone-alt me-2 text-green"></i> <a href="tel:+254792493299">0792 493 299</a></li>
+                            <li><i class="fab fa-whatsapp me-2 text-green"></i> <a href="https://wa.me/254792493299" target="_blank">WhatsApp Us</a></li>
+                            <li><i class="fas fa-map-marker-alt me-2 text-red"></i> Nairobi, Kenya</li>
+                            <li><i class="far fa-clock me-2 text-yellow"></i> Mon-Sat: 8:00 AM - 6:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p>
+    © 2025 Lucky Pool Tables & Accessories. All Rights Reserved. | 
+    Designed by <a href="https://wa.me/254114234020" target="_blank" style="color: inherit; text-decoration: underline;">
+        Jaytech Solutions 254
+    </a>
+</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/254792493299" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp whatsapp-icon"></i> WhatsApp Us
+    </a>
+
+    <!-- Back to Top -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script id="app-script">
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animation on Scroll
+        const animateElements = document.querySelectorAll('.animate');
+        
+        function checkIfInView() {
+            const windowHeight = window.innerHeight;
+            const windowTopPosition = window.scrollY;
+            const windowBottomPosition = windowTopPosition + windowHeight;
+            
+            animateElements.forEach(function(element) {
+                const elementHeight = element.offsetHeight;
+                const elementTopPosition = element.offsetTop;
+                const elementBottomPosition = elementTopPosition + elementHeight;
+                
+                if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkIfInView);
+        window.addEventListener('load', checkIfInView);
+        
+        // Testimonials Swiper
+        const testimonialSwiper = new Swiper('.testimonial-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+        
+        // Gallery Swiper
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+        
+        // Gallery Lightbox
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+        const lightboxNext = lightbox.querySelector('.lightbox-next');
+        let currentImageIndex = 0;
+        
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const imgSrc = galleryImages[index].getAttribute('src');
+            lightboxImg.setAttribute('src', imgSrc);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            const imgSrc = galleryImages[currentImageIndex].getAttribute('src');
+            lightboxImg.setAttribute('src', imgSrc);
+        }
+        
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            const imgSrc = galleryImages[currentImageIndex].getAttribute('src');
+            lightboxImg.setAttribute('src', imgSrc);
+        }
+        
+        galleryImages.forEach((image, index) => {
+            image.addEventListener('click', () => openLightbox(index));
+        });
+        
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', nextImage);
+        lightboxPrev.addEventListener('click', prevImage);
+        
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! This is a prototype. In the full version, your message would be sent to our team.');
+        });
+        
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        });
+        </script>
+        <script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    // Collect form values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let model = document.getElementById("model").value;
+    let message = document.getElementById("message").value;
+
+    // WhatsApp API
+    let whatsappNumber = "254792493299"; // Your number in international format
+    let whatsappMessage = `Hello *Lucky Pool Table and Accessories*,%0A%0A` +
+                          `I am *${name}*.%0A` +
+                          `📧 Email: _${email}_%0A` +
+                          `📱 Phone: _${phone}_%0A` +
+                          `🎱 Interested Model: *${model}*%0A%0A` +
+                          `📝 Message:%0A${message}%0A%0A` +
+                          `Looking forward to your response.`;
+
+    let url = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    // Open WhatsApp
+    window.open(url, "_blank");
+});
+</script>
+</body>
+</html>
