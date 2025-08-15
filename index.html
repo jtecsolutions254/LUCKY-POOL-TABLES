@@ -378,7 +378,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
+            color: rgb(237, 241, 236);
         }
         
         .contact-info {
@@ -408,7 +408,7 @@
             height: 54px;
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
-            color: white;
+            color: rgb(22, 23, 24);
             border-radius: 10px;
             margin-bottom: 20px;
         }
@@ -417,7 +417,7 @@
             background-color: rgba(255,255,255,0.2);
             border-color: var(--primary-green);
             box-shadow: none;
-            color: white;
+            color: rgb(45, 70, 185);
         }
         
         textarea.form-control {
@@ -699,6 +699,49 @@
             align-items: center;
             justify-content: center;
         }
+        #accessories-gallery {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#accessories-gallery h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0B6623;
+}
+
+.accessory-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.accessory-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.accessory-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.accessory-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.accessory-item:hover {
+    transform: scale(1.05);
+}
+
     </style>
 </head>
 <body>
@@ -770,6 +813,7 @@
                 <div class="col-lg-6 animate">
                     <div class="about-img">
                         <img src="photos/premiumpool.jpg" alt="Premium Pool Table">
+                        <h3>Premium Pool Table Ksh95,000</h3>
                     </div>
                 </div>
                 <div class="col-lg-6 animate">
@@ -797,7 +841,7 @@
                             <img src="photos/classicpro.jpg" alt="Classic Pro Table">
                         </div>
                         <div class="product-details">
-                            <h3>Classic Pro</h3>
+                            <h3>Classic Pro  Ksh95,000</h3>
                             <p>Our most popular model combines traditional design with modern craftsmanship.</p>
                             <div class="finishes mb-3">
                                 <p><strong>Available Finishes:</strong></p>
@@ -822,7 +866,7 @@
                             <img src="photos/luxury elite.jpg" alt="Luxury Elite Table">
                         </div>
                         <div class="product-details">
-                            <h3>Luxury Elite</h3>
+                            <h3>Luxury Elite  Ksh95,000</h3>
                             <p>Our premium table featuring exquisite woodwork and tournament-grade cloth.</p>
                             <div class="finishes mb-3">
                                 <p><strong>Available Finishes:</strong></p>
@@ -848,7 +892,7 @@
                             <img src="photos/modern sleek.jpg" alt="Modern Sleek Table">
                         </div>
                         <div class="product-details">
-                            <h3>Modern Sleek</h3>
+                            <h3>Modern Sleek  Ksh95,000</h3>
                             <p>Contemporary design with sleek lines perfect for modern spaces.</p>
                             <div class="finishes mb-3">
                                 <p><strong>Available Finishes:</strong></p>
@@ -926,7 +970,7 @@
                             <i class="fas fa-check-circle"></i>
                         </div>
                         <div class="feature-text">
-                            <h4>Delivery at a Price</h4>
+                            <h4>Delivery at a Price Ksh75 per Kilometer</h4>
                             <p>We offer competitive delivery and installation services throughout Kenya to ensure your table arrives in perfect condition.</p>
                         </div>
                     </div>
@@ -960,39 +1004,118 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery">
-        <div class="container">
-            <div class="text-center animate">
-                <h2 class="section-title mx-auto">Gallery</h2>
-                <p class="col-lg-8 mx-auto mt-4">See our premium pool tables in action in various settings from homes to clubs and businesses.</p>
-            </div>
-            
-            <div class="gallery-container mt-5 animate">
-                <div class="swiper gallery-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="photos/IMG-20250810-WA0005.jpg" alt="Pool table in home setting" class="gallery-img">
-</div>
-                        <div class="swiper-slide">
-                            <img src="IMG-20250810-WA0007.jpg" alt="Pool table in club setting" class="gallery-img">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="photos/IMG-20250810-WA0009.jpg" alt="Detail of pool table surface" class="gallery-img">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="photos/IMG-20250810-WA0008.jpg" alt="Business lounge with pool table" class="gallery-img">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="photos/IMG-20250810-WA0010.jpg" alt="Close-up of pool accessories" class="gallery-img">
-                        </div>
+<section id="gallery">
+    <div class="container">
+        <div class="text-center animate">
+            <h2 class="section-title mx-auto">Gallery</h2>
+            <p class="col-lg-8 mx-auto mt-4">See our premium pool tables in action in various settings from homes to clubs and businesses.</p>
+        </div>
+        
+        <div class="gallery-container mt-5 animate">
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <img src="photos/IMG-20250810-WA0005.jpg" alt="Pool table in home setting" class="gallery-img">
+                        <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20pool%20table%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Fphotos%2FIMG-20250810-WA0005.jpg" target="_blank" class="btn btn-success mt-2">Can I get this?</a>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-slide">
+                        <img src="photos/IMG-20250810-WA0019.jpg" alt="Pool table in club setting" class="gallery-img">
+                        <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20pool%20table%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Fphotos%2FIMG-20250810-WA0007.jpg" target="_blank" class="btn btn-success mt-2">Can I get this?</a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="photos/IMG-20250810-WA0009.jpg" alt="Detail of pool table surface" class="gallery-img">
+                        <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20pool%20table%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Fphotos%2FIMG-20250810-WA0009.jpg" target="_blank" class="btn btn-success mt-2">Can I get this?</a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="photos/IMG-20250810-WA0008.jpg" alt="Business lounge with pool table" class="gallery-img">
+                        <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20pool%20table%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Fphotos%2FIMG-20250810-WA0008.jpg" target="_blank" class="btn btn-success mt-2">Can I get this?</a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <img src="photos/IMG-20250810-WA0010.jpg" alt="Close-up of pool accessories" class="gallery-img">
+                        <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20pool%20table%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Fphotos%2FIMG-20250810-WA0010.jpg" target="_blank" class="btn btn-success mt-2">Can I get this?</a>
+                    </div>
+
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section id="accessories-gallery" style="padding: 40px; background-color: #f5f5f5;">
+    <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Pool Table Accessories Gallery</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;">
+        
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory1.jpg" alt="Pool Table Triangle" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Pool Triangle</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory1.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory2.jpg" alt="Pool Cue" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Pool Cue</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory2.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory3.jpg" alt="Canopy Lights" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Canopy Lights</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory3.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory4.jpg" alt="Chalk Box" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Chalk Box</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory4.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory5.jpg" alt="Snooker Cue Bag" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Snooker Cue Bag</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory5.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory6.jpg" alt="Pool Cue Bag" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Pool Cue Bag</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory6.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory7.jpg" alt="Scoreboard" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Scoreboard</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory7.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory8.jpg" alt="Ball Set" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Ball Set</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory8.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory9.jpg" alt="Bridge Stick" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Bridge Stick</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory9.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="accessories/accessory10.jpg" alt="Table Brush" style="width: 100%; border-radius: 8px;">
+            <p style="margin-top: 10px;">Table Brush</p>
+            <a href="https://wa.me/254792493299?text=Hi%2C%20I%20am%20interested%20in%20this%20accessory%20https%3A%2F%2Fjtecsolutions254.github.io%2FLUCKY-POOL-TABLES%2Faccessories%2Faccessory10.jpg" target="_blank" style="display:inline-block; margin-top:8px; padding:8px 12px; background:#25D366; color:white; border-radius:5px; text-decoration:none;">Can I get this?</a>
+        </div>
+
+    </div>
+</section>
+
 
     <!-- Testimonials -->
     <section id="testimonials">
@@ -1169,12 +1292,32 @@
             <div class="col-md-6">
                 <div class="mb-4">
                     <select class="form-control" id="model" required>
-                        <option value="">Select Pool Table Model</option>
-                        <option value="Classic Pro">Classic Pro</option>
-                        <option value="Luxury Elite">Luxury Elite</option>
-                        <option value="Modern Sleek">Modern Sleek</option>
-                        <option value="Other">Other / Not Sure Yet</option>
-                    </select>
+    <option value="">Select Pool Table Model / Accessory</option>
+    
+    <!-- Pool Table Models -->
+    <option value="Classic Pro">Classic Pro</option>
+    <option value="Luxury Elite">Luxury Elite</option>
+    <option value="Modern Sleek">Modern Sleek</option>
+    
+    <!-- Accessories -->
+    <option value="Triangle Rack">Triangle Rack</option>
+    <option value="Pool Cues">Pool Cues</option>
+    <option value="Canopy Lights">Canopy Lights</option>
+    <option value="Chalk Box">Chalk Box</option>
+    <option value="Snooker Cue Bag">Snooker Cue Bag</option>
+    <option value="Pool Cue Bag">Pool Cue Bag</option>
+    <option value="Scoreboard">Scoreboard</option>
+    <option value="Table Brush">Table Brush</option>
+    <option value="Cue Tip Shaper">Cue Tip Shaper</option>
+    <option value="Pool Table Cover">Pool Table Cover</option>
+    <option value="Ball Set">Billiard Ball Set</option>
+    <option value="Rest Stick">Rest Stick / Spider Rest</option>
+    <option value="Cue Holder">Cue Holder / Stand</option>
+    
+    <!-- Other -->
+    <option value="Other">Other / Not Sure Yet</option>
+</select>
+
                 </div>
             </div>
         </div>
